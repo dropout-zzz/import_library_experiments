@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -e
 
 rel="-g -O2 -flto -Wall -Wextra -Werror -std=gnu99 -ffunction-sections -fdata-sections -fvisibility=hidden"
