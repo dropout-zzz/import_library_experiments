@@ -8,8 +8,8 @@ extern void *lib2_handle;
 
 FUNC_PTR_VAR static void (*lib2_func1_ptr)(void);
 
-void l2_f1(void) {
-  lib2_func1_ptr();
+STUB void l2_f1(void) {
+  __asm__("jmp *lib2_func1_ptr(%rip)");
 }
 
 static void lib2_func1_resolver_cb(void) {
