@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # quick and dirty build script, rebuilds everything every time it runs
+# this test both GCC and LLVM/Clang toolchain
 
 set -e
 
