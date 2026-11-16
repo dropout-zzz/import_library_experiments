@@ -6,7 +6,7 @@
 
 extern void *lib1_handle;
 
-static void (*lib1_func2_ptr)(void);
+FUNC_PTR_VAR static void (*lib1_func2_ptr)(void);
 
 void l1_f2(void) {
   lib1_func2_ptr();

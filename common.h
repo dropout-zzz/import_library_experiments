@@ -17,3 +17,7 @@ typedef void (*dlopen_callback)(void);
 
 // the intention is if our "import library" (aka "stub libraries") is linked into a shared library in future, it wouldnt export the private symbols we use internally.
 #define EXPORT_API __attribute__((visibility("default")))
+
+// we need to do this since in production the stub is a naked function with basic asm stmt, compiler might see func ptr var is written but not read and that causes it to be optimized out.
+// it seems like if you use a custom C identifier named section you want the `retain` but just `used` is enough for normal variables? im confused
+#define FUNC_PTR_VAR __attribute__((used))
