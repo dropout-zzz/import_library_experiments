@@ -1,0 +1,5 @@
+*.so
+/app
+/app_llvm
+*.o
+*.a
