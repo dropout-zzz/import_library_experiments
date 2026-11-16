@@ -26,5 +26,5 @@ $llclang -c lib2_func2_stub.c -o l2f2_ll.o -fPIC
 ar rcs liblib1_llvm.a l1f1_ll.o l1f2_ll.o l1dl.o
 ar rcs liblib2_llvm.a l2f1_ll.o l2f2_ll.o l2dl.o
 
-$cc -fPIE runtime.c app.c -o app -L. -llib1 -llib2 $ldfl
-$llclang -fPIE -fuse-ld=lld runtime.c app.c -o app_llvm -L. -llib1_llvm -llib2_llvm $ldfl
+$cc -fPIE runtime.c app.c -o app -L. -llib1 -llib2 $ldfl -pie
+$llclang -fPIE -fuse-ld=lld runtime.c app.c -o app_llvm -L. -llib1_llvm -llib2_llvm $ldfl -pie

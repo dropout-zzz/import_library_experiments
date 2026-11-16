@@ -1,3 +1,12 @@
+/*
+ * "runtime.c" here emulates if we had Libc side support
+ * user main is pretend to be at "app.c" as app_main with a dummy prototype for test purpose
+ *
+ * note that if we support dynamic linking and shared libraries, then the "import library" might be linked into a shared library.
+ * in that case it will have its own copy of library handle though dynamic linker ensures there is one of the actual library instance.
+ * still note it require modifying dynamic linker to run its callbacks in our custom sections. (this should be done when the library is loaded due to any reason and its the same immediate binding as we do in this file i.e. before running user "main" code)
+ */
+
 #include <stdint.h>
 #include <stdio.h>
 
