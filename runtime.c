@@ -18,7 +18,10 @@ extern void app_main(void);
 static void dummy_resolver(void) {}
 REGISTER_RESOLVER_CALLBACK dummy_resolver_entry = dummy_resolver;
 
+// we need to take the address of these symbols, not their values. (do they even have meaningful values? we dont care that anyways.)
+// we are defining __start_* as an external array so it satisfies the above note.
 extern const resolver_callback __start_dotresolve[];
+// we dont access any data via it so it can just a `const void` and we only take reference of it to get its location later.
 extern const void __stop_dotresolve;
 
 static void dummy_dlopen_cb(void) {}

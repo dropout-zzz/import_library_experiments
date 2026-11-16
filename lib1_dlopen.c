@@ -6,6 +6,8 @@
 
 // this can't be static because stub needs it to dlsym.
 // it cant be const because its inited at runtime.
+//
+// note: when in actual production impl we will prefix these symbol with underscores as they are internal.
 void *lib1_handle;
 
 static void lib1_dlopen(void) {
