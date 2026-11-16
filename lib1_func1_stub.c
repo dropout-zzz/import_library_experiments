@@ -10,6 +10,7 @@ extern void *lib1_handle;
 FUNC_PTR_VAR static void (*lib1_func1_ptr)(void);
 
 // in production this will be simply a naked function with a basic asm statement that simply jump immediately to func ptr which preserved any ABI or argument. the C prototype can be a dummy one. (each architecture need its own assembly port, ofc. why im unnecessarily nagging? maybe chatgpt triggered me.)
+// note: don't use extended asm stmt in this. GCC doc has said its "appears to work but not supported" and shouldnt be relied on.
 STUB void l1_f1(void) {
   __asm__("jmp *lib1_func1_ptr(%rip)");
 }
