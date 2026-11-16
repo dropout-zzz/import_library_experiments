@@ -5,3 +5,5 @@ typedef void (*resolver_callback)(void);
 typedef void (*dlopen_callback)(void);
 
 #define REGISTER_DLOPEN_CALLBACK __attribute__((section("dotdlopen"),used,retain)) static const dlopen_callback
+
+#define EXPORT_API __attribute__((visibility("default")))

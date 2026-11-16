@@ -1,6 +1,6 @@
 set -e
 
-rel="-g -O2 -flto -Wall -Wextra -Werror -std=gnu99 -ffunction-sections -fdata-sections"
+rel="-g -O2 -flto -Wall -Wextra -Werror -std=gnu99 -ffunction-sections -fdata-sections -fvisibility=hidden"
 llclang="clang $rel"
 cc="gcc $rel"
 ldfl="-Wl,--gc-sections"
