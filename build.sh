@@ -14,6 +14,7 @@ $cc -c lib1_func2_stub.c -fPIC
 $cc -c lib2_dlopen.c -fPIC
 $cc -c lib2_func1_stub.c -fPIC
 $cc -c lib2_func2_stub.c -fPIC
+rm -f liblib1.a liblib2.a
 ar rcs liblib1.a lib1_func1_stub.o lib1_func2_stub.o lib1_dlopen.o
 ar rcs liblib2.a lib2_func1_stub.o lib2_func2_stub.o lib2_dlopen.o
 
@@ -23,6 +24,7 @@ $llclang -c lib1_func2_stub.c -o l1f2_ll.o -fPIC
 $llclang -c lib2_dlopen.c -o l2dl.o -fPIC
 $llclang -c lib2_func1_stub.c -o l2f1_ll.o -fPIC
 $llclang -c lib2_func2_stub.c -o l2f2_ll.o -fPIC
+rm -f liblib1_llvm.a liblib2_llvm.a
 ar rcs liblib1_llvm.a l1f1_ll.o l1f2_ll.o l1dl.o
 ar rcs liblib2_llvm.a l2f1_ll.o l2f2_ll.o l2dl.o
 
