@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# quick and dirty build script, rebuilds everything every time it runs
+
 set -e
 
 rel="-g -O2 -flto -Wall -Wextra -Werror -std=gnu99 -ffunction-sections -fdata-sections -fvisibility=hidden"
