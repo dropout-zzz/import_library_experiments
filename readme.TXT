@@ -1,6 +1,8 @@
 This repo is demonstrating using GNU ld's `__start_` `__stop_` for C identifier named sections (also appear to work with LLD) to implement some sort of import library with immediate binding
 
 
+Some generated files are written by hand by techncailly all you need is a list of library and their name and name of functions you need to use
+
 scope: Linux and ELF only with GNU toolchain. custom Libc port for startup process (this is just a demo, it only pretend to do some job on Libc side)
 
 lifetime: libraries is automatically unloaded on process quit by OS.
